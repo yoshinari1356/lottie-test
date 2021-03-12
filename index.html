@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/tgs-player.js"></script>
+</head>
+<body>
+  <div class="container" style="height: 10000px">
+    <lottie-player
+      id="baseLottie"
+      autoplay
+      loop
+      mode="normal"
+      src="/json/animation_km6ohb7z.json"
+      style="width:400px; height: 400px;"
+    ></lottie-player>
+    <lottie-player
+      id="firstLottie"
+      loop
+      src="/json/animation_km6ohb7z.json"
+      style="width:400px; height: 400px;"
+    ></lottie-player>
+  </div>
+  <script>
+    LottieInteractivity.create({
+      mode:"scroll",
+      player:'#firstLottie',
+      actions: [
+        {
+          visibility: [0, 0.5],
+          type: 'stop',
+          frames: [0],
+        },
+        {
+          visibility: [0.5,0.8],
+          type: "seek",
+          frames: [-30, 100]
+        }
+      ]
+    });
+    </script>
+</body>
+</html>
